@@ -14,253 +14,182 @@
         }
         
         body {
-            background-color: #f9f9f9;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            display: flex;
             min-height: 100vh;
         }
         
-        /* استایل هدر با رنگ‌های جذاب */
+        /* استایل هدر */
         header {
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10;
-        }
-        
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
         }
         
         .logo i {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #ffcc00;
         }
         
         .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 2.2rem;
+            font-weight: 800;
         }
         
-        .logo p {
-            font-size: 1rem;
+        .header-subtitle {
+            font-size: 1.2rem;
             opacity: 0.9;
+            margin-top: 0.5rem;
         }
         
-        /* استایل نوار کناری سمت راست برای فهرست دوره‌ها */
-        .sidebar {
-            width: 320px;
-            background: linear-gradient(to bottom, #2c3e50, #34495e);
-            color: white;
-            padding: 2rem 1.5rem;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-            overflow-y: auto;
+        /* استایل بخش اصلی */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
         }
         
-        .sidebar h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid #3498db;
-            color: #ffcc00;
+        .sessions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
         
-        .course-list {
-            list-style: none;
-        }
-        
-        .course-item {
-            background-color: rgba(255, 255, 255, 0.1);
-            margin-bottom: 1rem;
-            border-radius: 10px;
+        .session-box {
+            background-color: white;
+            border-radius: 15px;
             overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 3px solid transparent;
         }
         
-        .course-item:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateX(-5px);
-        }
-        
-        .course-item.active {
-            background-color: rgba(52, 152, 219, 0.3);
+        .session-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
             border-color: #3498db;
         }
         
-        .course-link {
-            display: block;
-            padding: 1.2rem 1rem;
+        .session-header {
+            background: linear-gradient(to right, #2c3e50, #4a6491);
             color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .course-link i {
-            margin-left: 0.5rem;
-            color: #ffcc00;
-        }
-        
-        .session-count {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: white;
-            font-size: 0.8rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            margin-right: 0.5rem;
-        }
-        
-        /* استایل محتوای اصلی */
-        .main-content {
-            flex: 1;
-            padding: 2rem;
-            overflow-y: auto;
-        }
-        
-        .course-header {
-            background-color: white;
             padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            margin-bottom: 2rem;
+            text-align: center;
         }
         
-        .course-header h2 {
-            color: #2c3e50;
-            font-size: 1.8rem;
+        .session-title {
+            font-size: 1.6rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
         
-        .course-description {
-            color: #7f8c8d;
-            font-size: 1rem;
+        .session-number {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #2c3e50;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
         }
         
-        .course-stats {
-            display: flex;
-            gap: 1.5rem;
-            color: #3498db;
-            font-weight: 500;
-        }
-        
         .video-container {
-            background-color: white;
-            border-radius: 10px;
             padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            margin-bottom: 2rem;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8fafc;
         }
         
         .video-placeholder {
-            background-color: #1a1a1a;
-            border-radius: 8px;
-            height: 500px;
+            width: 100%;
+            height: 200px;
+            background-color: #2c3e50;
+            border-radius: 10px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             margin-bottom: 1rem;
-            position: relative;
-            overflow: hidden;
         }
         
         .video-placeholder i {
-            font-size: 5rem;
+            font-size: 4rem;
             color: #3498db;
             margin-bottom: 1rem;
         }
         
-        .video-placeholder p {
-            font-size: 1.2rem;
-            color: #ddd;
+        .iframe-container {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #000;
         }
         
-        .video-title {
-            font-size: 1.4rem;
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .admin-note {
+            background-color: #e8f4fc;
+            border-right: 5px solid #3498db;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+        
+        .admin-note h3 {
             color: #2c3e50;
             margin-bottom: 1rem;
-        }
-        
-        .sessions-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.2rem;
-        }
-        
-        .session-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 1.2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .session-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            border-color: #3498db;
-        }
-        
-        .session-card.active {
-            border-color: #3498db;
-            background-color: #f8fafc;
-        }
-        
-        .session-number {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 36px;
-            font-weight: bold;
-            margin-bottom: 0.8rem;
-        }
-        
-        .session-card h4 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .session-duration {
-            color: #7f8c8d;
-            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
+        }
+        
+        .admin-note p {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .code-block {
+            background-color: #2c3e50;
+            color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-family: monospace;
+            overflow-x: auto;
+            direction: ltr;
         }
         
         /* استایل فوتر */
         footer {
             background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
             color: white;
-            padding: 2rem;
+            padding: 2.5rem;
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
             border-top: 5px solid #3498db;
         }
         
@@ -270,12 +199,23 @@
         }
         
         .footer-logo {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
             color: #ffcc00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
         }
         
-        .footer-social {
+        .footer-text {
+            margin-top: 1.5rem;
+            color: #bdc3c7;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .social-links {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
@@ -285,11 +225,11 @@
         .social-link {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem;
             color: white;
             text-decoration: none;
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 0.7rem 1.2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 30px;
             transition: all 0.3s ease;
         }
@@ -299,363 +239,194 @@
             transform: translateY(-3px);
         }
         
-        .footer-text {
-            margin-top: 1.5rem;
-            color: #bdc3c7;
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-        
-        .footer-text i {
-            color: #e74c3c;
-            margin: 0 0.3rem;
-        }
-        
         /* استایل ریسپانسیو */
         @media (max-width: 992px) {
-            .container {
-                flex-direction: column;
+            .sessions-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
-            
-            .sidebar {
-                width: 100%;
-                order: 2;
+        }
+        
+        @media (max-width: 768px) {
+            header {
                 padding: 1.5rem;
             }
             
-            .main-content {
-                order: 1;
+            .logo h1 {
+                font-size: 1.8rem;
             }
             
-            .sessions-list {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            .logo i {
+                font-size: 2.5rem;
+            }
+            
+            .main-container {
+                padding: 1.5rem;
+            }
+            
+            .sessions-grid {
+                grid-template-columns: 1fr;
             }
         }
         
-        @media (max-width: 576px) {
-            .header-content {
+        @media (max-width: 480px) {
+            .logo {
                 flex-direction: column;
-                text-align: center;
                 gap: 1rem;
             }
             
-            .video-placeholder {
-                height: 300px;
-            }
-            
-            .sessions-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-social {
+            .social-links {
                 flex-direction: column;
                 align-items: center;
-                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <div class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                <div>
-                    <h1>مرکز رسانه دوره‌های آموزشی دکتر شریفی</h1>
-                    <p>ارائه باکیفیت‌ترین محتوای آموزشی در زمینه‌های تخصصی</p>
-                </div>
-            </div>
-            <div class="header-actions">
-                <button id="loginBtn" class="btn" style="background-color: #ffcc00; color: #2c3e50; border: none; padding: 0.7rem 1.5rem; border-radius: 30px; font-weight: 600; cursor: pointer;">
-                    <i class="fas fa-sign-in-alt"></i> ورود به پنل کاربری
-                </button>
-            </div>
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h1>مرکز رسانه دوره‌های آموزشی دکتر شریفی</h1>
         </div>
+        <p class="header-subtitle">دسترسی به ویدئوهای آموزشی با کیفیت</p>
     </header>
     
-    <div class="container">
-        <!-- نوار کناری سمت راست برای فهرست دوره‌ها -->
-        <aside class="sidebar">
-            <h2><i class="fas fa-list-alt"></i> فهرست دوره‌ها</h2>
-            <ul class="course-list">
-                <li class="course-item active">
-                    <a href="#" class="course-link" data-course="ai-content">
-                        <i class="fas fa-robot"></i>
-                        <span class="session-count">10 جلسه</span>
-                        کارگاه تولید محتوا با هوش مصنوعی
-                    </a>
-                </li>
-                <li class="course-item">
-                    <a href="#" class="course-link" data-course="seo-course">
-                        <i class="fas fa-chart-line"></i>
-                        <span class="session-count">8 جلسه</span>
-                        دوره تخصصی سئو و بهینه‌سازی سایت
-                    </a>
-                </li>
-                <li class="course-item">
-                    <a href="#" class="course-link" data-course="digital-marketing">
-                        <i class="fas fa-bullhorn"></i>
-                        <span class="session-count">12 جلسه</span>
-                        بازاریابی دیجیتال پیشرفته
-                    </a>
-                </li>
-                <li class="course-item">
-                    <a href="#" class="course-link" data-course="data-analysis">
-                        <i class="fas fa-chart-bar"></i>
-                        <span class="session-count">15 جلسه</span>
-                        تحلیل داده با پایتون
-                    </a>
-                </li>
-                <li class="course-item">
-                    <a href="#" class="course-link" data-course="web-development">
-                        <i class="fas fa-code"></i>
-                        <span class="session-count">20 جلسه</span>
-                        توسعه وب Full-Stack
-                    </a>
-                </li>
-            </ul>
-            
-            <div style="margin-top: 3rem; background-color: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 10px;">
-                <h3><i class="fas fa-info-circle"></i> راهنمای استفاده</h3>
-                <p style="margin-top: 1rem; font-size: 0.9rem; line-height: 1.8;">
-                    برای مشاهده جلسات هر دوره، روی عنوان دوره در نوار کناری کلیک کنید. سپس با کلیک روی هر جلسه، فیلم آموزشی آن در بخش مرکزی صفحه پخش خواهد شد.
-                </p>
+    <div class="main-container">
+        <div class="admin-note">
+            <h3><i class="fas fa-user-shield"></i> بخش مدیریت (ادمین)</h3>
+            <p>در این بخش می‌توانید ۱۵ کد iframe مربوط به ویدئوهای آموزشی را قرار دهید. هر کد iframe در باکس مربوط به جلسه خود نمایش داده می‌شود.</p>
+            <div class="code-block">
+                // کد iframe نمونه برای جایگزینی در هر باکس<br>
+                &lt;iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="ویدئوی آموزشی" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
             </div>
-        </aside>
+        </div>
         
-        <!-- محتوای اصلی -->
-        <main class="main-content">
-            <div class="course-header">
-                <h2>کارگاه تولید محتوا با هوش مصنوعی</h2>
-                <p class="course-description">
-                    در این دوره آموزشی، تکنیک‌ها و ابزارهای تولید محتوای حرفه‌ای با استفاده از هوش مصنوعی را می‌آموزید. این دوره شامل 10 جلسه آموزشی و پروژه‌های عملی است.
-                </p>
-                <div class="course-stats">
-                    <span><i class="fas fa-clock"></i> مدت دوره: 15 ساعت</span>
-                    <span><i class="fas fa-user-graduate"></i> شرکت‌کنندگان: 245 نفر</span>
-                    <span><i class="fas fa-star"></i> امتیاز: 4.9 از 5</span>
-                </div>
-            </div>
-            
-            <div class="video-container">
-                <h3 class="video-title" id="current-session-title">برای شروع آموزش، یک جلسه را انتخاب کنید</h3>
-                <div class="video-placeholder" id="video-player">
-                    <i class="fas fa-play-circle"></i>
-                    <p>پخش ویدئوی جلسه آموزشی</p>
-                    <div style="margin-top: 2rem; color: #aaa; font-size: 0.9rem;">
-                        <p>پس از انتخاب جلسه، ویدئوی آموزشی در این قسمت نمایش داده می‌شود.</p>
- 
-<iframe
-    src="https://player.vidprotect.ir?id=80ca8dd1-c58e-45bc-9f50-dd7a1b49f410"
-    style="height:360px;width:640px;border:none;"
-    allow="fullscreen; encrypted-media *;"
-> </iframe>
-                    </div>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
-                    <div>
-                        <button id="prevBtn" class="btn" style="background-color: #3498db; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 5px; cursor: pointer; margin-left: 0.5rem;">
-                            <i class="fas fa-arrow-right"></i> جلسه قبلی
-                        </button>
-                        <button id="nextBtn" class="btn" style="background-color: #2ecc71; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 5px; cursor: pointer;">
-                            جلسه بعدی <i class="fas fa-arrow-left"></i>
-                        </button>
-                    </div>
-                    <div style="color: #7f8c8d;">
-                        <i class="fas fa-expand"></i> برای مشاهده در حالت تمام صفحه، روی آیکون در پخش‌کننده ویدئو کلیک کنید.
-                    </div>
-                </div>
-            </div>
-            
-            <h3 style="margin-bottom: 1.5rem; color: #2c3e50;">جلسات دوره کارگاه تولید محتوا با هوش مصنوعی</h3>
-            <div class="sessions-list" id="sessions-container">
-                <!-- جلسات به صورت داینامیک با JavaScript افزوده می‌شوند -->
-            </div>
-        </main>
+        <div class="sessions-grid" id="sessions-container">
+            <!-- 15 باکس برای جلسات 1 تا 15 -->
+            <!-- کدهای iframe توسط ادمین در این بخش قرار می‌گیرند -->
+        </div>
     </div>
     
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <i class="fas fa-university"></i> گروه دکتر شریفی
+                <i class="fas fa-university"></i>
+                <span>گروه دکتر شریفی</span>
             </div>
             
-            <div class="footer-social">
+            <div class="social-links">
                 <a href="#" class="social-link">
-                    <i class="fab fa-instagram"></i>
-                    <span>اینستاگرام</span>
+                    <i class="fas fa-satellite-dish"></i>
+                    <span>کانال پژوهستان در ایتا</span>
                 </a>
                 <a href="#" class="social-link">
                     <i class="fab fa-telegram"></i>
                     <span>تلگرام</span>
                 </a>
                 <a href="#" class="social-link">
-                    <i class="fas fa-satellite-dish"></i>
-                    <span>کانال پژوهستان در ایتا</span>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="fab fa-youtube"></i>
-                    <span>یوتیوب</span>
+                    <i class="fab fa-instagram"></i>
+                    <span>اینستاگرام</span>
                 </a>
             </div>
             
             <div class="footer-text">
-                <p>تمامی حقوق این وبسایت متعلق به <i class="fas fa-copyright"></i> <strong>گروه دکتر شریفی</strong> می‌باشد.</p>
-                <p>جهت ارتباط با واحد پشتیبانی و اطلاع از جدیدترین دوره‌های آموزشی، <strong>کانال پژوهستان در ایتا</strong> را دنبال کنید.</p>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #95a5a6;">تهران، خیابان آزادی، دانشگاه صنعتی شریف، مرکز آموزش‌های تخصصی</p>
+                <p>تمامی حقوق این وبسایت متعلق به گروه دکتر شریفی می‌باشد.</p>
+                <p>جهت دسترسی به جدیدترین دوره‌های آموزشی، کانال پژوهستان در ایتا را دنبال کنید.</p>
             </div>
         </div>
     </footer>
     
     <script>
-        // داده‌های جلسات دوره
+        // داده‌های جلسات
         const sessions = [
-            { id: 1, title: "مقدمه‌ای بر هوش مصنوعی و کاربردهای آن در تولید محتوا", duration: "45 دقیقه", videoId: "dQw4w9WgXcQ" },
-            { id: 2, title: "آشنایی با ابزارهای تولید محتوای متنی هوشمند", duration: "52 دقیقه", videoId: "9bZkp7q19f0" },
-            { id: 3, title: "تولید محتوای تصویری با هوش مصنوعی", duration: "61 دقیقه", videoId: "kJQP7kiw5Fk" },
-            { id: 4, title: "ساخت ویدئوهای آموزشی با کمک ابزارهای AI", duration: "48 دقیقه", videoId: "fn3KWM1kuAw" },
-            { id: 5, title: "بهینه‌سازی محتوا برای موتورهای جستجو با هوش مصنوعی", duration: "55 دقیقه", videoId: "CduA0TULnow" },
-            { id: 6, title: "تولید محتوای صوتی و پادکست با فناوری‌های نوین", duration: "50 دقیقه", videoId: "JGwWNGJdvx8" },
-            { id: 7, title: "تحلیل محتوای رقبا و ایده‌پردازی هوشمند", duration: "58 دقیقه", videoId: "hLQl3WQQoQ0" },
-            { id: 8, title: "اتوماسیون فرآیند تولید و انتشار محتوا", duration: "47 دقیقه", videoId: "F4PThY021u4" },
-            { id: 9, title: "خلاقیت در تولید محتوا با ترکیب ابزارهای مختلف", duration: "63 دقیقه", videoId: "OPf0YbXqDm0" },
-            { id: 10, title: "جمع‌بندی و معرفی منابع پیشرفته‌تر", duration: "40 دقیقه", videoId: "McxWnVh_jdE" }
+            { id: 1, title: "جلسه اول: مقدمه و آشنایی با دوره" },
+            { id: 2, title: "جلسه دوم: اصول اولیه تولید محتوا" },
+            { id: 3, title: "جلسه سوم: آشنایی با ابزارهای تولید محتوا" },
+            { id: 4, title: "جلسه چهارم: استراتژی‌های تولید محتوای موثر" },
+            { id: 5, title: "جلسه پنجم: تولید محتوای متنی حرفه‌ای" },
+            { id: 6, title: "جلسه ششم: تولید محتوای تصویری جذاب" },
+            { id: 7, title: "جلسه هفتم: تولید محتوای ویدئویی" },
+            { id: 8, title: "جلسه هشتم: سئو و بهینه‌سازی محتوا" },
+            { id: 9, title: "جلسه نهم: بازاریابی محتوایی" },
+            { id: 10, title: "جلسه دهم: تحلیل نتایج و بازخورد" },
+            { id: 11, title: "جلسه یازدهم: تکنیک‌های پیشرفته تولید محتوا" },
+            { id: 12, title: "جلسه دوازدهم: اتوماسیون فرآیند تولید محتوا" },
+            { id: 13, title: "جلسه سیزدهم: تولید محتوا برای شبکه‌های اجتماعی" },
+            { id: 14, title: "جلسه چهاردهم: مطالعه موردی و نمونه‌های موفق" },
+            { id: 15, title: "جلسه پانزدهم: جمع‌بندی و آینده تولید محتوا" }
         ];
         
-        // متغیرهای وضعیت
-        let currentSessionIndex = 0;
-        
-        // تابع برای تولید کد iframe
-        function generateIframe(videoId) {
-            return `<iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1" 
-                title="ویدئوی آموزشی" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen
-                style="border-radius: 8px;">
-            </iframe>`;
-        }
-        
-        // تابع برای نمایش جلسات
-        function renderSessions() {
-            const sessionsContainer = document.getElementById('sessions-container');
-            sessionsContainer.innerHTML = '';
+        // تابع برای ایجاد باکس‌های جلسات
+        function createSessionBoxes() {
+            const container = document.getElementById('sessions-container');
             
-            sessions.forEach((session, index) => {
-                const sessionCard = document.createElement('div');
-                sessionCard.className = `session-card ${index === currentSessionIndex ? 'active' : ''}`;
-                sessionCard.innerHTML = `
-                    <div class="session-number">${session.id}</div>
-                    <h4>${session.title}</h4>
-                    <div class="session-duration">
-                        <i class="fas fa-clock"></i>
-                        <span>${session.duration}</span>
+            sessions.forEach(session => {
+                const sessionBox = document.createElement('div');
+                sessionBox.className = 'session-box';
+                sessionBox.id = `session-${session.id}`;
+                
+                sessionBox.innerHTML = `
+                    <div class="session-header">
+                        <div class="session-number">${session.id}</div>
+                        <div class="session-title">${session.title}</div>
+                    </div>
+                    <div class="video-container">
+                        <div class="iframe-container" id="iframe-${session.id}">
+                            <!-- محل قرارگیری کد iframe توسط ادمین -->
+                            <div class="video-placeholder">
+                                <i class="fas fa-video"></i>
+                                <p>محل قرارگیری ویدئوی جلسه ${session.id}</p>
+                                <p style="margin-top: 10px; font-size: 0.9rem; color: #aaa;">کد iframe در اینجا قرار می‌گیرد</p>
+                            </div>
+                        </div>
                     </div>
                 `;
                 
-                sessionCard.addEventListener('click', () => {
-                    playSession(index);
-                });
-                
-                sessionsContainer.appendChild(sessionCard);
+                container.appendChild(sessionBox);
             });
         }
         
-        // تابع برای پخش جلسه انتخاب شده
-        function playSession(index) {
-            currentSessionIndex = index;
-            const session = sessions[index];
-            
-            // به روزرسانی عنوان جلسه
-            document.getElementById('current-session-title').textContent = `جلسه ${session.id}: ${session.title}`;
-            
-            // به روزرسانی پخش‌کننده ویدئو
-            const videoPlayer = document.getElementById('video-player');
-            videoPlayer.innerHTML = generateIframe(session.videoId);
-            
-            // به روزرسانی وضعیت فعال در لیست جلسات
-            document.querySelectorAll('.session-card').forEach((card, i) => {
-                if (i === index) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
-            });
-        }
-        
-        // تابع برای پخش جلسه بعدی
-        function playNextSession() {
-            if (currentSessionIndex < sessions.length - 1) {
-                playSession(currentSessionIndex + 1);
-            } else {
-                alert("این آخرین جلسه دوره است!");
+        // تابع برای جایگزینی placeholder با کد iframe واقعی
+        function replaceWithIframe(sessionId, iframeCode) {
+            const iframeContainer = document.getElementById(`iframe-${sessionId}`);
+            if (iframeContainer) {
+                iframeContainer.innerHTML = iframeCode;
             }
         }
         
-        // تابع برای پخش جلسه قبلی
-        function playPrevSession() {
-            if (currentSessionIndex > 0) {
-                playSession(currentSessionIndex - 1);
-            } else {
-                alert("این اولین جلسه دوره است!");
-            }
+        // تابع نمونه برای نمایش نحوه استفاده ادمین
+        function showAdminExample() {
+            // این یک نمونه کد iframe است که ادمین باید جایگزین کند
+            const sampleIframeCode = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="ویدئوی آموزشی" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            
+            // نمایش نمونه در جلسه اول به عنوان مثال
+            replaceWithIframe(1, sampleIframeCode);
         }
         
-        // رویدادهای کلیک برای دکمه‌های دوره‌ها
-        document.querySelectorAll('.course-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // حذف کلاس active از همه دوره‌ها
-                document.querySelectorAll('.course-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // اضافه کردن کلاس active به دوره انتخاب شده
-                this.parentElement.classList.add('active');
-                
-                // نمایش پیام تغییر دوره
-                const courseName = this.querySelector('span:not(.session-count)').textContent;
-                document.getElementById('current-session-title').textContent = `دوره "${courseName}" انتخاب شد. برای مشاهده جلسات، یکی از دوره‌های دیگر را انتخاب کنید.`;
-                
-                // پاک کردن پخش‌کننده ویدئو
-                document.getElementById('video-player').innerHTML = `
-                    <i class="fas fa-exchange-alt"></i>
-                    <p>تغییر دوره به "${courseName}"</p>
-                    <div style="margin-top: 2rem; color: #aaa; font-size: 0.9rem;">
-                        <p>این یک پیام شبیه‌سازی شده است. در حالت واقعی، جلسات دوره انتخاب شده نمایش داده می‌شوند.</p>
-                    </div>
-                `;
-                
-                // پاک کردن لیست جلسات
-                document.getElementById('sessions-container').innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: #7f8c8d;">
-                        <i class="fas fa-info-circle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        <p>جلسات دوره "${courseName}" در این بخش نمایش داده می‌شود.</p>
-                        <p style="margin-top: 1rem; font-size: 0.9rem;">این یک نمایش دمو است. در نسخه کامل، جلسات تمامی دوره‌ها بارگذاری می‌شوند.</p>
-                    </div>
-                `;
-            });
-        });
-        
-        // مقداردهی اولیه
+        // اجرای توابع پس از بارگذاری صفحه
         document.addEventListener('DOMContentLoaded', function() {
-            renderSessions();
+            createSessionBoxes();
             
-            // تنظیم رویدادهای کلیک برای دکمه‌های ناوبری
-            document.getElementById('nextBtn').addEventListener('click', playNextSession);
-            document.getElementById('prevBtn').addEventListener('click', playPrevSession);
+            // نمایش نمونه iframe در جلسه اول (فقط برای نمایش)
+            setTimeout(() => {
+                showAdminExample();
+                
+                // نمایش پیام راهنما برای ادمین
+                alert("راهنمای ادمین: کدهای iframe واقعی را در تابع replaceWithIframe برای هر 15 جلسه وارد کنید.\n\nدر حال حاضر فقط جلسه اول دارای یک نمونه iframe نمایشی است.");
+            }, 1000);
             
-            // رویداد کلیک برای دکمه ورود
-            document.getElementById('loginBtn').addEventListener('click', function() {
-                alert("در نسخه کامل، فرم ورود به پنل کاربری نمایش داده می‌شود.");
-            });
-            
-            // پخش اولین جلسه به طور پیش‌فرض
-            playSession(0);
+            // راهنمای استفاده برای ادمین در کنسول
+            console.log("راهنمای ادمین:");
+            console.log("برای قرار دادن کدهای iframe واقعی، در تابع showAdminExample کد نمونه را با کدهای واقعی جایگزین کنید.");
+            console.log("یا مستقیماً از تابع replaceWithIframe برای هر جلسه استفاده کنید:");
+            console.log("replaceWithIframe(
+<iframe
+    src="https://player.vidprotect.ir?id=80ca8dd1-c58e-45bc-9f50-dd7a1b49f410"
+    style="height:360px;width:640px;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>)");
+            console.log("replaceWithIframe(2, 'کد iframe جلسه 2')");
+            console.log("...");
+            console.log("replaceWithIframe(15, 'کد iframe جلسه 15')");
         });
     </script>
 </body>
