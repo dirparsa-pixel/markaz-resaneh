@@ -5,107 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مرکز رسانه دوره‌های آموزشی دکتر شریفی</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- فونت یکان -->
+    <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #f8f5f0 0%, #e8e1d4 100%);
             color: #333;
             min-height: 100vh;
         }
         
-        /* استایل هدر */
+        /* استایل هدر با طرح اسلامی */
         header {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            background: linear-gradient(135deg, #0c3c78 0%, #1a5fb4 100%);
             color: white;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 25px rgba(12, 60, 120, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* طرح اسلامی در هدر */
+        .islamic-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+            background-size: 60px 60px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
         }
         
         .logo {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 0.5rem;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
         }
         
-        .logo i {
-            font-size: 3rem;
-            color: #ffcc00;
+        .logo-icon {
+            font-size: 3.5rem;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+        
+        .logo-icon::after {
+            content: "﴿";
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 2rem;
+            color: #ffd700;
+            font-family: 'Vazir';
+        }
+        
+        .logo-icon::before {
+            content: "﴾";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 2rem;
+            color: #ffd700;
+            font-family: 'Vazir';
         }
         
         .logo h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin: 0.5rem 0;
+        }
+        
+        .logo h1 span {
+            color: #ffd700;
         }
         
         .header-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
-            margin-top: 0.5rem;
+            margin-top: 0.8rem;
+            color: #e6f2ff;
+            font-weight: 300;
+        }
+        
+        .quran-verse {
+            font-style: italic;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: inline-block;
+            border-right: 3px solid #ffd700;
+            font-size: 1.1rem;
+            color: #e6f2ff;
+            max-width: 700px;
         }
         
         /* استایل بخش اصلی */
         .main-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
+        }
+        
+        .sessions-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .sessions-title h2 {
+            font-size: 2.2rem;
+            color: #0c3c78;
+            display: inline-block;
+            padding: 0 1.5rem;
+            background-color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .sessions-title::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to left, #0c3c78, #ffd700);
+            z-index: 1;
         }
         
         .sessions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
         
         .session-box {
             background-color: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(12, 60, 120, 0.1);
             transition: all 0.3s ease;
-            border: 3px solid transparent;
+            border: 2px solid #e8e1d4;
         }
         
         .session-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-            border-color: #3498db;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(12, 60, 120, 0.15);
+            border-color: #0c3c78;
         }
         
         .session-header {
-            background: linear-gradient(to right, #2c3e50, #4a6491);
+            background: linear-gradient(to right, #0c3c78, #1a5fb4);
             color: white;
             padding: 1.5rem;
             text-align: center;
+            position: relative;
+        }
+        
+        .session-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to left, #ffd700, transparent);
         }
         
         .session-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
         }
         
         .session-number {
             display: inline-block;
-            background-color: #ffcc00;
-            color: #2c3e50;
-            width: 40px;
-            height: 40px;
+            background-color: #ffd700;
+            color: #0c3c78;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             text-align: center;
-            line-height: 40px;
+            line-height: 45px;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
         
         .video-container {
@@ -115,13 +223,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #f8fafc;
+            background-color: #f9f7f2;
         }
         
         .video-placeholder {
             width: 100%;
             height: 200px;
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, #0c3c78, #1a5fb4);
             border-radius: 10px;
             display: flex;
             flex-direction: column;
@@ -133,7 +241,7 @@
         
         .video-placeholder i {
             font-size: 4rem;
-            color: #3498db;
+            color: #ffd700;
             margin-bottom: 1rem;
         }
         
@@ -143,6 +251,7 @@
             border-radius: 10px;
             overflow: hidden;
             background-color: #000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .iframe-container iframe {
@@ -153,86 +262,127 @@
         
         /* استایل فوتر */
         footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+            background: linear-gradient(135deg, #0c3c78 0%, #083063 100%);
             color: white;
-            padding: 2.5rem;
+            padding: 3rem 2rem;
             text-align: center;
-            margin-top: 3rem;
-            border-top: 5px solid #3498db;
+            margin-top: 4rem;
+            position: relative;
+            border-top: 5px solid #ffd700;
+        }
+        
+        .footer-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, transparent 48%, rgba(255, 215, 0, 0.05) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(255, 215, 0, 0.05) 50%, transparent 52%);
+            background-size: 40px 40px;
+            opacity: 0.3;
+            z-index: 1;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         .footer-logo {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #ffcc00;
+            font-size: 2.2rem;
+            margin-bottom: 1.8rem;
+            color: #ffd700;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1rem;
+            font-weight: 700;
         }
         
         .footer-text {
-            margin-top: 1.5rem;
-            color: #bdc3c7;
+            margin-top: 1.8rem;
+            color: #e6f2ff;
             font-size: 1.1rem;
-            line-height: 1.8;
+            line-height: 1.9;
+            font-weight: 300;
         }
         
         .social-links {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
         
         .social-link {
             display: flex;
             align-items: center;
-            gap: 0.7rem;
+            gap: 0.8rem;
             color: white;
             text-decoration: none;
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.8rem;
             border-radius: 30px;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
         
         .social-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
+            background-color: rgba(255, 215, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         /* استایل ریسپانسیو */
-        @media (max-width: 992px) {
+        @media (max-width: 1200px) {
             .sessions-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .sessions-title h2 {
+                font-size: 1.8rem;
             }
         }
         
         @media (max-width: 768px) {
             header {
-                padding: 1.5rem;
+                padding: 2rem 1.5rem;
             }
             
             .logo h1 {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
             
-            .logo i {
-                font-size: 2.5rem;
+            .logo-icon {
+                font-size: 2.8rem;
             }
             
             .main-container {
-                padding: 1.5rem;
+                padding: 2rem 1.5rem;
             }
             
             .sessions-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
             }
         }
         
@@ -242,24 +392,39 @@
                 gap: 1rem;
             }
             
-            .social-links {
-                flex-direction: column;
-                align-items: center;
+            .quran-verse {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+            
+            .session-title {
+                font-size: 1.3rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <i class="fas fa-graduation-cap"></i>
-            <h1>مرکز رسانه دوره‌های آموزشی دکتر شریفی</h1>
+        <div class="islamic-pattern"></div>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h1>مرکز رسانه <span>دوره‌های آموزشی دکتر شریفی</span></h1>
+                <p class="header-subtitle">ارائه دانش به سبک ایرانی - اسلامی</p>
+            </div>
+            <div class="quran-verse">
+                "وَقُل رَّبِّ زِدْنِي عِلْمًا" - بگو: پروردگارا، بر دانشم بیفزای (سوره طه، آیه ۱۱۴)
+            </div>
         </div>
-        <p class="header-subtitle">کاربر گرامی،
-استفاده از این دوره‌ها فقط برای افرادی که هزینه آن را پرداخت کرده‌اند شرعاً مجاز است و هرگونه استفاده غیرمجاز، مصداق تضییع حق‌الناس خواهد بود.</p>
     </header>
     
     <div class="main-container">
+        <div class="sessions-title">
+            <h2><i class="fas fa-video" style="margin-left: 10px; color: #0c3c78;"></i> جلسات آموزشی</h2>
+        </div>
+        
         <div class="sessions-grid" id="sessions-container">
             <!-- 15 باکس برای جلسات 1 تا 15 -->
             <!-- کدهای iframe در بخش JavaScript قرار می‌گیرند -->
@@ -267,16 +432,17 @@
     </div>
     
     <footer>
+        <div class="footer-pattern"></div>
         <div class="footer-content">
             <div class="footer-logo">
-                <i class="fas fa-university"></i>
+                <i class="fas fa-mosque"></i>
                 <span>گروه دکتر شریفی</span>
             </div>
             
             <div class="social-links">
                 <a href="#" class="social-link">
                     <i class="fas fa-satellite-dish"></i>
-                    <span>@pajouhestan</span>
+                    <span>کانال پژوهستان در ایتا</span>
                 </a>
                 <a href="#" class="social-link">
                     <i class="fab fa-telegram"></i>
@@ -291,6 +457,7 @@
             <div class="footer-text">
                 <p>تمامی حقوق این وبسایت متعلق به گروه دکتر شریفی می‌باشد.</p>
                 <p>جهت دسترسی به جدیدترین دوره‌های آموزشی، کانال پژوهستان در ایتا را دنبال کنید.</p>
+                <p style="margin-top: 1rem; color: #ffd700; font-size: 1rem;">آموزش، گامی در جهت تعالی و پیشرفت جامعه اسلامی</p>
             </div>
         </div>
     </footer>
@@ -299,17 +466,21 @@
         // داده‌های جلسات
         const sessions = [
             { id: 1, title: "جلسه اول: مقدمه و آشنایی با دوره" },
-            { id: 2, title: "جلسه دوم: دستور نویسی حرفه ای " },
-            { id: 3, title: "جلسه سوم: تولید حرفه ای " },
-            { id: 4, title: "جلسه چهارم: تولید حرفه ای" },
-            { id: 5, title: "جلسه پنجم: تولید محتوای حرفه‌ای" },
-            { id: 6, title: "جلسه ششم: تولید محتوای حرفه‌ای" },
-            { id: 7, title: "جلسه هفتم:تولید محتوای حرفه‌ای" },
-            { id: 8, title: "جلسه هشتم: تولید محتوای حرفه‌ای" },
-            { id: 9, title: "جلسه نهم: تولید محتوای حرفه‌ای" },
-            { id: 10, title: "جلسه دهم: تولید محتوای حرفه‌ای" },
-            { id: 11, title: "جلسه یازدهم: تولید محتوای حرفه‌ ای" },
-                   ];
+            { id: 2, title: "جلسه دوم: اصول اولیه تولید محتوا" },
+            { id: 3, title: "جلسه سوم: آشنایی با ابزارهای تولید محتوا" },
+            { id: 4, title: "جلسه چهارم: استراتژی‌های تولید محتوای موثر" },
+            { id: 5, title: "جلسه پنجم: تولید محتوای متنی حرفه‌ای" },
+            { id: 6, title: "جلسه ششم: تولید محتوای تصویری جذاب" },
+            { id: 7, title: "جلسه هفتم: تولید محتوای ویدئویی" },
+            { id: 8, title: "جلسه هشتم: سئو و بهینه‌سازی محتوا" },
+            { id: 9, title: "جلسه نهم: بازاریابی محتوایی" },
+            { id: 10, title: "جلسه دهم: تحلیل نتایج و بازخورد" },
+            { id: 11, title: "جلسه یازدهم: تکنیک‌های پیشرفته تولید محتوا" },
+            { id: 12, title: "جلسه دوازدهم: اتوماسیون فرآیند تولید محتوا" },
+            { id: 13, title: "جلسه سیزدهم: تولید محتوا برای شبکه‌های اجتماعی" },
+            { id: 14, title: "جلسه چهاردهم: مطالعه موردی و نمونه‌های موفق" },
+            { id: 15, title: "جلسه پانزدهم: جمع‌بندی و آینده تولید محتوا" }
+        ];
         
         // تابع برای ایجاد باکس‌های جلسات
         function createSessionBoxes() {
@@ -329,8 +500,9 @@
                         <div class="iframe-container" id="iframe-${session.id}">
                             <!-- محل قرارگیری کد iframe -->
                             <div class="video-placeholder">
-                                <i class="fas fa-video"></i>
-                                <p>محل قرارگیری ویدئوی جلسه ${session.id}</p>
+                                <i class="fas fa-play-circle"></i>
+                                <p>ویدئوی آموزشی جلسه ${session.id}</p>
+                                <p style="margin-top: 10px; font-size: 0.9rem; color: #e6f2ff;">کد iframe در اینجا قرار می‌گیرد</p>
                             </div>
                         </div>
                     </div>
