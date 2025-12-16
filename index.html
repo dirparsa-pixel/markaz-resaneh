@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -152,38 +151,6 @@
             border: none;
         }
         
-        .admin-note {
-            background-color: #e8f4fc;
-            border-right: 5px solid #3498db;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 10px;
-        }
-        
-        .admin-note h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        
-        .admin-note p {
-            color: #555;
-            line-height: 1.8;
-        }
-        
-        .code-block {
-            background-color: #2c3e50;
-            color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            font-family: monospace;
-            overflow-x: auto;
-            direction: ltr;
-        }
-        
         /* استایل فوتر */
         footer {
             background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
@@ -292,18 +259,9 @@
     </header>
     
     <div class="main-container">
-        <div class="admin-note">
-            <h3><i class="fas fa-user-shield"></i> بخش مدیریت (ادمین)</h3>
-            <p>در این بخش می‌توانید ۱۵ کد iframe مربوط به ویدئوهای آموزشی را قرار دهید. هر کد iframe در باکس مربوط به جلسه خود نمایش داده می‌شود.</p>
-            <div class="code-block">
-                // کد iframe نمونه برای جایگزینی در هر باکس<br>
-                &lt;iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="ویدئوی آموزشی" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-            </div>
-        </div>
-        
         <div class="sessions-grid" id="sessions-container">
             <!-- 15 باکس برای جلسات 1 تا 15 -->
-            <!-- کدهای iframe توسط ادمین در این بخش قرار می‌گیرند -->
+            <!-- کدهای iframe در بخش JavaScript قرار می‌گیرند -->
         </div>
     </div>
     
@@ -340,7 +298,7 @@
         // داده‌های جلسات
         const sessions = [
             { id: 1, title: "جلسه اول: مقدمه و آشنایی با دوره" },
-            { id: 2, title: "جلسه دوم: اصول اولیه تولید محتوا" },
+            { id: 2, title: "جلسه دوم: دستور نویسی حرفه ای ا" },
             { id: 3, title: "جلسه سوم: آشنایی با ابزارهای تولید محتوا" },
             { id: 4, title: "جلسه چهارم: استراتژی‌های تولید محتوای موثر" },
             { id: 5, title: "جلسه پنجم: تولید محتوای متنی حرفه‌ای" },
@@ -372,11 +330,10 @@
                     </div>
                     <div class="video-container">
                         <div class="iframe-container" id="iframe-${session.id}">
-                            <!-- محل قرارگیری کد iframe توسط ادمین -->
+                            <!-- محل قرارگیری کد iframe -->
                             <div class="video-placeholder">
                                 <i class="fas fa-video"></i>
                                 <p>محل قرارگیری ویدئوی جلسه ${session.id}</p>
-                                <p style="margin-top: 10px; font-size: 0.9rem; color: #aaa;">کد iframe در اینجا قرار می‌گیرد</p>
                             </div>
                         </div>
                     </div>
@@ -394,39 +351,30 @@
             }
         }
         
-        // تابع نمونه برای نمایش نحوه استفاده ادمین
-        function showAdminExample() {
-            // این یک نمونه کد iframe است که ادمین باید جایگزین کند
-            const sampleIframeCode = 
-<iframe
+        // کد iframe جلسه اول (طبق درخواست شما)
+        const session1Iframe = `<iframe
     src="https://player.vidprotect.ir?id=80ca8dd1-c58e-45bc-9f50-dd7a1b49f410"
-    style="height:360px;width:640px;border:none;"
+    style="height:100%;width:100%;border:none;"
     allow="fullscreen; encrypted-media *;"
-> </iframe>
-            // نمایش نمونه در جلسه اول به عنوان مثال
-            replaceWithIframe(1, sampleIframeCode);
+> </iframe>`;
+        
+        // تابع برای تنظیم iframe‌ها
+        function setupIframes() {
+            // کد iframe برای جلسه اول (از قبل تنظیم شده)
+            replaceWithIframe(1, session1Iframe);
+            
+            // برای جلسات ۲ تا ۱۵ - کدهای iframe را اینجا قرار دهید
+            // مثال:
+            // replaceWithIframe(2, '<iframe src="آدرس ویدئوی جلسه ۲" ...></iframe>');
+            // replaceWithIframe(3, '<iframe src="آدرس ویدئوی جلسه ۳" ...></iframe>');
+            // ...
+            // replaceWithIframe(15, '<iframe src="آدرس ویدئوی جلسه ۱۵" ...></iframe>');
         }
         
         // اجرای توابع پس از بارگذاری صفحه
         document.addEventListener('DOMContentLoaded', function() {
             createSessionBoxes();
-            
-            // نمایش نمونه iframe در جلسه اول (فقط برای نمایش)
-            setTimeout(() => {
-                showAdminExample();
-                
-                // نمایش پیام راهنما برای ادمین
-                alert("راهنمای ادمین: کدهای iframe واقعی را در تابع replaceWithIframe برای هر 15 جلسه وارد کنید.\n\nدر حال حاضر فقط جلسه اول دارای یک نمونه iframe نمایشی است.");
-            }, 1000);
-            
-            // راهنمای استفاده برای ادمین در کنسول
-            console.log("راهنمای ادمین:");
-            console.log("برای قرار دادن کدهای iframe واقعی، در تابع showAdminExample کد نمونه را با کدهای واقعی جایگزین کنید.");
-            console.log("یا مستقیماً از تابع replaceWithIframe برای هر جلسه استفاده کنید:");
-            console.log("replaceWithIframe(1, 'کد iframe جلسه 1')");
-            console.log("replaceWithIframe(2, 'کد iframe جلسه 2')");
-            console.log("...");
-            console.log("replaceWithIframe(15, 'کد iframe جلسه 15')");
+            setupIframes();
         });
     </script>
 </body>
