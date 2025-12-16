@@ -1,1 +1,429 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرکز رسانه دوره‌های آموزشی دکتر شریفی</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        
+        /* استایل هدر */
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo i {
+            font-size: 3rem;
+            color: #ffcc00;
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        /* استایل بخش اصلی */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .sessions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .session-box {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .session-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-color: #3498db;
+        }
+        
+        .session-header {
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .session-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .session-number {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #2c3e50;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .video-container {
+            padding: 1.5rem;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8fafc;
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #2c3e50;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .video-placeholder i {
+            font-size: 4rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        
+        .iframe-container {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #000;
+        }
+        
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .admin-note {
+            background-color: #e8f4fc;
+            border-right: 5px solid #3498db;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+        
+        .admin-note h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .admin-note p {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .code-block {
+            background-color: #2c3e50;
+            color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-family: monospace;
+            overflow-x: auto;
+            direction: ltr;
+        }
+        
+        /* استایل فوتر */
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+            color: white;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 5px solid #3498db;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #ffcc00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .footer-text {
+            margin-top: 1.5rem;
+            color: #bdc3c7;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            color: white;
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* استایل ریسپانسیو */
+        @media (max-width: 992px) {
+            .sessions-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 1.5rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo i {
+                font-size: 2.5rem;
+            }
+            
+            .main-container {
+                padding: 1.5rem;
+            }
+            
+            .sessions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h1>مرکز رسانه دوره‌های آموزشی دکتر شریفی</h1>
+        </div>
+        <p class="header-subtitle">دسترسی به ویدئوهای آموزشی با کیفیت</p>
+    </header>
+    
+    <div class="main-container">
+        <div class="admin-note">
+            <h3><i class="fas fa-user-shield"></i> بخش مدیریت (ادمین)</h3>
+            <p>در این بخش می‌توانید ۱۵ کد iframe مربوط به ویدئوهای آموزشی را قرار دهید. هر کد iframe در باکس مربوط به جلسه خود نمایش داده می‌شود.</p>
+            <div class="code-block">
+                // کد iframe نمونه برای جایگزینی در هر باکس<br>
+                &lt;iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" title="ویدئوی آموزشی" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+            </div>
+        </div>
+        
+        <div class="sessions-grid" id="sessions-container">
+            <!-- 15 باکس برای جلسات 1 تا 15 -->
+            <!-- کدهای iframe توسط ادمین در این بخش قرار می‌گیرند -->
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-university"></i>
+                <span>گروه دکتر شریفی</span>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <i class="fas fa-satellite-dish"></i>
+                    <span>کانال پژوهستان در ایتا</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-telegram"></i>
+                    <span>تلگرام</span>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                    <span>اینستاگرام</span>
+                </a>
+            </div>
+            
+            <div class="footer-text">
+                <p>تمامی حقوق این وبسایت متعلق به گروه دکتر شریفی می‌باشد.</p>
+                <p>جهت دسترسی به جدیدترین دوره‌های آموزشی، کانال پژوهستان در ایتا را دنبال کنید.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // داده‌های جلسات
+        const sessions = [
+            { id: 1, title: "جلسه اول: مقدمه و آشنایی با دوره" },
+            { id: 2, title: "جلسه دوم: اصول اولیه تولید محتوا" },
+            { id: 3, title: "جلسه سوم: آشنایی با ابزارهای تولید محتوا" },
+            { id: 4, title: "جلسه چهارم: استراتژی‌های تولید محتوای موثر" },
+            { id: 5, title: "جلسه پنجم: تولید محتوای متنی حرفه‌ای" },
+            { id: 6, title: "جلسه ششم: تولید محتوای تصویری جذاب" },
+            { id: 7, title: "جلسه هفتم: تولید محتوای ویدئویی" },
+            { id: 8, title: "جلسه هشتم: سئو و بهینه‌سازی محتوا" },
+            { id: 9, title: "جلسه نهم: بازاریابی محتوایی" },
+            { id: 10, title: "جلسه دهم: تحلیل نتایج و بازخورد" },
+            { id: 11, title: "جلسه یازدهم: تکنیک‌های پیشرفته تولید محتوا" },
+            { id: 12, title: "جلسه دوازدهم: اتوماسیون فرآیند تولید محتوا" },
+            { id: 13, title: "جلسه سیزدهم: تولید محتوا برای شبکه‌های اجتماعی" },
+            { id: 14, title: "جلسه چهاردهم: مطالعه موردی و نمونه‌های موفق" },
+            { id: 15, title: "جلسه پانزدهم: جمع‌بندی و آینده تولید محتوا" }
+        ];
+        
+        // تابع برای ایجاد باکس‌های جلسات
+        function createSessionBoxes() {
+            const container = document.getElementById('sessions-container');
+            
+            sessions.forEach(session => {
+                const sessionBox = document.createElement('div');
+                sessionBox.className = 'session-box';
+                sessionBox.id = `session-${session.id}`;
+                
+                sessionBox.innerHTML = `
+                    <div class="session-header">
+                        <div class="session-number">${session.id}</div>
+                        <div class="session-title">${session.title}</div>
+                    </div>
+                    <div class="video-container">
+                        <div class="iframe-container" id="iframe-${session.id}">
+                            <!-- محل قرارگیری کد iframe توسط ادمین -->
+                            <div class="video-placeholder">
+                                <i class="fas fa-video"></i>
+                                <p>محل قرارگیری ویدئوی جلسه ${session.id}</p>
+                                <p style="margin-top: 10px; font-size: 0.9rem; color: #aaa;">کد iframe در اینجا قرار می‌گیرد</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(sessionBox);
+            });
+        }
+        
+        // تابع برای جایگزینی placeholder با کد iframe واقعی
+        function replaceWithIframe(sessionId, iframeCode) {
+            const iframeContainer = document.getElementById(`iframe-${sessionId}`);
+            if (iframeContainer) {
+                iframeContainer.innerHTML = iframeCode;
+            }
+        }
+        
+        // تابع نمونه برای نمایش نحوه استفاده ادمین
+        function showAdminExample() {
+            // این یک نمونه کد iframe است که ادمین باید جایگزین کند
+            const sampleIframeCode = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="ویدئوی آموزشی" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            
+            // نمایش نمونه در جلسه اول به عنوان مثال
+            replaceWithIframe(1, sampleIframeCode);
+        }
+        
+        // اجرای توابع پس از بارگذاری صفحه
+        document.addEventListener('DOMContentLoaded', function() {
+            createSessionBoxes();
+            
+            // نمایش نمونه iframe در جلسه اول (فقط برای نمایش)
+            setTimeout(() => {
+                showAdminExample();
+                
+                // نمایش پیام راهنما برای ادمین
+                alert("راهنمای ادمین: کدهای iframe واقعی را در تابع replaceWithIframe برای هر 15 جلسه وارد کنید.\n\nدر حال حاضر فقط جلسه اول دارای یک نمونه iframe نمایشی است.");
+            }, 1000);
+            
+            // راهنمای استفاده برای ادمین در کنسول
+            console.log("راهنمای ادمین:");
+            console.log("برای قرار دادن کدهای iframe واقعی، در تابع showAdminExample کد نمونه را با کدهای واقعی جایگزین کنید.");
+            console.log("یا مستقیماً از تابع replaceWithIframe برای هر جلسه استفاده کنید:");
+            console.log("replaceWithIframe(1, 'کد iframe جلسه 1')");
+            console.log("replaceWithIframe(2, 'کد iframe جلسه 2')");
+            console.log("...");
+            console.log("replaceWithIframe(15, 'کد iframe جلسه 15')");
+        });
+    </script>
+</body>
+</html>
