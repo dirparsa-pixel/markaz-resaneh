@@ -397,8 +397,12 @@
         // تابع نمونه برای نمایش نحوه استفاده ادمین
         function showAdminExample() {
             // این یک نمونه کد iframe است که ادمین باید جایگزین کند
-            const sampleIframeCode = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="ویدئوی آموزشی" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-            
+            const sampleIframeCode = 
+<iframe
+    src="https://player.vidprotect.ir?id=80ca8dd1-c58e-45bc-9f50-dd7a1b49f410"
+    style="height:360px;width:640px;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>
             // نمایش نمونه در جلسه اول به عنوان مثال
             replaceWithIframe(1, sampleIframeCode);
         }
