@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرکز رسانه دوره‌های آموزشی دکتر شریفی</title>
+    <title>دوره تولید محتوای چندرسانه‌ای حرفه‌ای - دکتر شریفی</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- فونت یکان -->
     <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
@@ -89,11 +89,12 @@
         }
         
         .logo h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 700;
             color: white;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             margin: 0.5rem 0;
+            line-height: 1.4;
         }
         
         .logo h1 span {
@@ -108,17 +109,24 @@
             font-weight: 300;
         }
         
-        .quran-verse {
-            font-style: italic;
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: rgba(255, 255, 255, 0.1);
+        .warning-box {
+            background-color: rgba(220, 53, 69, 0.15);
+            border: 2px solid #dc3545;
             border-radius: 10px;
-            display: inline-block;
-            border-right: 3px solid #ffd700;
+            padding: 1.2rem;
+            margin: 1.5rem auto 0;
+            max-width: 800px;
+            text-align: center;
+            color: #f8d7da;
+            font-weight: 500;
             font-size: 1.1rem;
-            color: #e6f2ff;
-            max-width: 700px;
+            box-shadow: 0 4px 15px rgba(220, 53, 69, 0.2);
+        }
+        
+        .warning-box i {
+            color: #ffd700;
+            margin-left: 10px;
+            font-size: 1.2rem;
         }
         
         /* استایل بخش اصلی */
@@ -153,6 +161,59 @@
             height: 2px;
             background: linear-gradient(to left, #0c3c78, #ffd700);
             z-index: 1;
+        }
+        
+        .course-info {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 25px rgba(12, 60, 120, 0.1);
+            border: 2px solid #e8e1d4;
+            text-align: center;
+        }
+        
+        .course-info h3 {
+            color: #0c3c78;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 0.8rem;
+            display: inline-block;
+        }
+        
+        .course-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background: linear-gradient(135deg, #f8f5f0, #e8e1d4);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #d4c9b8;
+            min-width: 180px;
+        }
+        
+        .stat-item i {
+            color: #0c3c78;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0c3c78;
+            display: block;
+        }
+        
+        .stat-item .label {
+            font-size: 1rem;
+            color: #666;
         }
         
         .sessions-grid {
@@ -196,7 +257,7 @@
         }
         
         .session-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 0.8rem;
         }
@@ -258,6 +319,89 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+        
+        /* استایل فرم ثبت‌نام */
+        .registration-section {
+            background: linear-gradient(135deg, #0c3c78, #1a5fb4);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            color: white;
+            box-shadow: 0 10px 30px rgba(12, 60, 120, 0.2);
+        }
+        
+        .registration-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #ffd700;
+        }
+        
+        .registration-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            flex: 1;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            font-family: 'Vazir';
+            background-color: white;
+            color: #333;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, #ffd700, #ffed4e);
+            color: #0c3c78;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: block;
+            margin: 2rem auto 0;
+            width: 200px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .form-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #e6f2ff;
+            font-style: italic;
         }
         
         /* استایل فوتر */
@@ -356,6 +500,11 @@
             .sessions-title h2 {
                 font-size: 1.8rem;
             }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -379,10 +528,24 @@
                 grid-template-columns: 1fr;
             }
             
+            .course-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-item {
+                width: 100%;
+                max-width: 250px;
+            }
+            
             .social-links {
                 flex-direction: column;
                 align-items: center;
                 gap: 1rem;
+            }
+            
+            .registration-section {
+                padding: 2rem 1.5rem;
             }
         }
         
@@ -392,13 +555,13 @@
                 gap: 1rem;
             }
             
-            .quran-verse {
-                font-size: 1rem;
-                padding: 0.8rem;
+            .session-title {
+                font-size: 1.2rem;
             }
             
-            .session-title {
-                font-size: 1.3rem;
+            .warning-box {
+                font-size: 1rem;
+                padding: 1rem;
             }
         }
     </style>
@@ -411,23 +574,112 @@
                 <div class="logo-icon">
                     <i class="fas fa-book-open"></i>
                 </div>
-                <h1>مرکز رسانه <span>دوره‌های آموزشی دکتر شریفی</span></h1>
-                <p class="header-subtitle">ارائه دانش به سبک ایرانی - اسلامی</p>
+                <h1>دوره تخصصی <span>تولید محتوای چندرسانه‌ای حرفه‌ای</span></h1>
+                <p class="header-subtitle">مرکز رسانه دوره‌های آموزشی دکتر شریفی</p>
             </div>
-            <div class="quran-verse">
-                "وَقُل رَّبِّ زِدْنِي عِلْمًا" - بگو: پروردگارا، بر دانشم بیفزای (سوره طه، آیه ۱۱۴)
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                هرگونه استفاده از محتوای این دوره برای افرادی که هزینه دوره را پرداخت نکرده‌اند، شرعاً مجاز نمی‌باشد.
             </div>
         </div>
     </header>
     
     <div class="main-container">
+        <div class="course-info">
+            <h3><i class="fas fa-info-circle" style="margin-left: 10px;"></i> معرفی دوره</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 1rem; color: #555;">
+                این دوره جامع تولید محتوای چندرسانه‌ای حرفه‌ای، شما را با اصول و تکنیک‌های تولید محتوای باکیفیت برای پلتفرم‌های مختلف آشنا می‌کند. از ایده‌پردازی تا انتشار نهایی، تمام مراحل تولید محتوای اثرگذار را فرا خواهید گرفت.
+            </p>
+            <div class="course-stats">
+                <div class="stat-item">
+                    <i class="fas fa-video"></i>
+                    <span class="number">11</span>
+                    <span class="label">جلسه آموزشی</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span class="number">15+</span>
+                    <span class="label">ساعت آموزش</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-certificate"></i>
+                    <span class="number">گواهینامه</span>
+                    <span class="label">معتبر پایان دوره</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span class="number">دکتر شریفی</span>
+                    <span class="label">مدرس دوره</span>
+                </div>
+            </div>
+        </div>
+        
         <div class="sessions-title">
-            <h2><i class="fas fa-video" style="margin-left: 10px; color: #0c3c78;"></i> جلسات آموزشی</h2>
+            <h2><i class="fas fa-play-circle" style="margin-left: 10px; color: #0c3c78;"></i> جلسات دوره تولید محتوای چندرسانه‌ای</h2>
         </div>
         
         <div class="sessions-grid" id="sessions-container">
-            <!-- 15 باکس برای جلسات 1 تا 15 -->
+            <!-- 11 باکس برای جلسات 1 تا 11 -->
             <!-- کدهای iframe در بخش JavaScript قرار می‌گیرند -->
+        </div>
+        
+        <div class="registration-section">
+            <h3 class="registration-title"><i class="fas fa-user-plus" style="margin-left: 10px;"></i> ثبت‌نام در دوره</h3>
+            <form class="registration-form" id="registrationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">نام و نام خانوادگی *</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="نام کامل خود را وارد کنید">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">شماره موبایل *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="09xxxxxxxxx">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">آدرس ایمیل</label>
+                        <input type="email" id="email" name="email" placeholder="example@domain.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="education">تحصیلات</label>
+                        <select id="education" name="education">
+                            <option value="">انتخاب کنید</option>
+                            <option value="diploma">دیپلم</option>
+                            <option value="associate">کاردانی</option>
+                            <option value="bachelor">کارشناسی</option>
+                            <option value="master">کارشناسی ارشد</option>
+                            <option value="phd">دکترا</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">سابقه کاری در زمینه تولید محتوا</label>
+                    <select id="experience" name="experience">
+                        <option value="">انتخاب کنید</option>
+                        <option value="none">بدون تجربه</option>
+                        <option value="beginner">تازه کار (کمتر از 1 سال)</option>
+                        <option value="intermediate">متوسط (1-3 سال)</option>
+                        <option value="advanced">حرفه‌ای (بیش از 3 سال)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">توضیحات یا سوالات</label>
+                    <textarea id="message" name="message" placeholder="سوالات یا توضیحات خود را اینجا بنویسید..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+                    ثبت درخواست
+                </button>
+                
+                <p class="form-note">
+                    پس از ثبت‌نام، همکاران ما در سریع‌ترین زمان ممکن با شما تماس خواهند گرفت.
+                </p>
+            </form>
         </div>
     </div>
     
@@ -435,7 +687,7 @@
         <div class="footer-pattern"></div>
         <div class="footer-content">
             <div class="footer-logo">
-                <i class="fas fa-mosque"></i>
+                <i class="fas fa-university"></i>
                 <span>گروه دکتر شریفی</span>
             </div>
             
@@ -457,7 +709,7 @@
             <div class="footer-text">
                 <p>تمامی حقوق این وبسایت متعلق به گروه دکتر شریفی می‌باشد.</p>
                 <p>جهت دسترسی به جدیدترین دوره‌های آموزشی، کانال پژوهستان در ایتا را دنبال کنید.</p>
-                <p style="margin-top: 1rem; color: #ffd700; font-size: 1rem;">آموزش، گامی در جهت تعالی و پیشرفت جامعه اسلامی</p>
+                <p style="margin-top: 1rem; color: #ffd700; font-size: 1rem;">ارائه محتوای آموزشی با کیفیت، رسالت ماست</p>
             </div>
         </div>
     </footer>
@@ -465,21 +717,17 @@
     <script>
         // داده‌های جلسات
         const sessions = [
-            { id: 1, title: "جلسه اول: مقدمه و آشنایی با دوره" },
-            { id: 2, title: "جلسه دوم: اصول اولیه تولید محتوا" },
-            { id: 3, title: "جلسه سوم: آشنایی با ابزارهای تولید محتوا" },
-            { id: 4, title: "جلسه چهارم: استراتژی‌های تولید محتوای موثر" },
-            { id: 5, title: "جلسه پنجم: تولید محتوای متنی حرفه‌ای" },
-            { id: 6, title: "جلسه ششم: تولید محتوای تصویری جذاب" },
-            { id: 7, title: "جلسه هفتم: تولید محتوای ویدئویی" },
-            { id: 8, title: "جلسه هشتم: سئو و بهینه‌سازی محتوا" },
-            { id: 9, title: "جلسه نهم: بازاریابی محتوایی" },
-            { id: 10, title: "جلسه دهم: تحلیل نتایج و بازخورد" },
-            { id: 11, title: "جلسه یازدهم: تکنیک‌های پیشرفته تولید محتوا" },
-            { id: 12, title: "جلسه دوازدهم: اتوماسیون فرآیند تولید محتوا" },
-            { id: 13, title: "جلسه سیزدهم: تولید محتوا برای شبکه‌های اجتماعی" },
-            { id: 14, title: "جلسه چهاردهم: مطالعه موردی و نمونه‌های موفق" },
-            { id: 15, title: "جلسه پانزدهم: جمع‌بندی و آینده تولید محتوا" }
+            { id: 1, title: "جلسه اول: مقدمه و کلیات تولید محتوای چندرسانه‌ای" },
+            { id: 2, title: "جلسه دوم: اصول اولیه تولید محتوای متنی و تصویری" },
+            { id: 3, title: "جلسه سوم: تکنیک‌های تولید محتوای ویدئویی حرفه‌ای" },
+            { id: 4, title: "جلسه چهارم: صداگذاری و موسیقی در محتوای چندرسانه‌ای" },
+            { id: 5, title: "جلسه پنجم: تدوین و ویرایش حرفه‌ای محتوا" },
+            { id: 6, title: "جلسه ششم: تولید محتوا برای شبکه‌های اجتماعی" },
+            { id: 7, title: "جلسه هفتم: سئو و بهینه‌سازی محتوای چندرسانه‌ای" },
+            { id: 8, title: "جلسه هشتم: استراتژی‌های توزیع و انتشار محتوا" },
+            { id: 9, title: "جلسه نهم: آنالیز و اندازه‌گیری اثربخشی محتوا" },
+            { id: 10, title: "جلسه دهم: اتوماسیون و ابزارهای پیشرفته تولید محتوا" },
+            { id: 11, title: "جلسه یازدهم: جمع‌بندی و ارائه پروژه نهایی" }
         ];
         
         // تابع برای ایجاد باکس‌های جلسات
@@ -527,37 +775,135 @@
     allow="fullscreen; encrypted-media *;"
 > </iframe>`;
         
+        // کد iframe جلسه دوم
+        const session2Iframe = `<iframe
+    src="https://player.vidprotect.ir?id=d61f06a4-b278-4e72-bb15-545c56b4605b"
+    style="height:100%;width:100%;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>`;
+        
+        // کد iframe جلسه سوم
+        const session3Iframe = `<iframe
+    src="https://player.vidprotect.ir?id=895d8164-2ecd-43a6-a7dd-a7d858911921"
+    style="height:100%;width:100%;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>`;
+        
+        // کد iframe جلسه چهارم
+        const session4Iframe = `<iframe
+    src="https://player.vidprotect.ir?id=5e731fb9-d5d1-47d1-b0db-731fa455bd8f"
+    style="height:100%;width:100%;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>`;
+        
+        // کد iframe جلسه پنجم
+        const session5Iframe = `<iframe
+    src="https://player.vidprotect.ir?id=b5ce487d-b8c9-41b8-93ad-689df39f0ea4"
+    style="height:100%;width:100%;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>`;
+        
+        // کد iframe جلسه ششم
+        const session6Iframe = `<iframe
+    src="https://player.vidprotect.ir?id=f6130e60-22f0-4a92-9356-09dffc78312d"
+    style="height:100%;width:100%;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>`;
+        
+        // کد iframe جلسه هفتم (نمونه - ID را باید جایگزین کنید)
+        const session7Iframe = `<iframe
+    src="https://player.vidprotect.ir?id=ID_GHEYMAT_7"
+    style="height:100%;width:100%;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>`;
+        
+        // کد iframe جلسه هشتم (نمونه - ID را باید جایگزین کنید)
+        const session8Iframe = `<iframe
+    src="https://player.vidprotect.ir?id=ID_GHEYMAT_8"
+    style="height:100%;width:100%;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>`;
+        
+        // کد iframe جلسه نهم (نمونه - ID را باید جایگزین کنید)
+        const session9Iframe = `<iframe
+    src="https://player.vidprotect.ir?id=ID_GHEYMAT_9"
+    style="height:100%;width:100%;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>`;
+        
+        // کد iframe جلسه دهم (نمونه - ID را باید جایگزین کنید)
+        const session10Iframe = `<iframe
+    src="https://player.vidprotect.ir?id=ID_GHEYMAT_10"
+    style="height:100%;width:100%;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>`;
+        
+        // کد iframe جلسه یازدهم (نمونه - ID را باید جایگزین کنید)
+        const session11Iframe = `<iframe
+    src="https://player.vidprotect.ir?id=ID_GHEYMAT_11"
+    style="height:100%;width:100%;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>`;
+        
         // تابع برای تنظیم iframe‌ها
         function setupIframes() {
-            // کد iframe برای جلسه اول (از قبل تنظیم شده)
+            // کد iframe برای جلسات 1 تا 6 (از قبل تنظیم شده)
             replaceWithIframe(1, session1Iframe);
-            // در تابع setupIframes، بعد از خط جلسه اول:
-replaceWithIframe(2, '
-<iframe
-    src="https://player.vidprotect.ir?id=d61f06a4-b278-4e72-bb15-545c56b4605b"
-    style="height:360px;width:640px;border:none;"
-    allow="fullscreen; encrypted-media *;"
-> </iframe>');
-replaceWithIframe(3, '
-<iframe
-    src="https://player.vidprotect.ir?id=895d8164-2ecd-43a6-a7dd-a7d858911921"
-    style="height:360px;width:640px;border:none;"
-    allow="fullscreen; encrypted-media *;"
-> </iframe>');
-// ...
-replaceWithIframe(15, 'کد iframe جلسه ۱۵');
-
-            // replaceWithIframe(2, '
-
-            // replaceWithIframe(3, '<iframe src="آدرس ویدئوی جلسه ۳" ...></iframe>');
-            // ...
-            // replaceWithIframe(15, '<iframe src="آدرس ویدئوی جلسه ۱۵" ...></iframe>');
+            replaceWithIframe(2, session2Iframe);
+            replaceWithIframe(3, session3Iframe);
+            replaceWithIframe(4, session4Iframe);
+            replaceWithIframe(5, session5Iframe);
+            replaceWithIframe(6, session6Iframe);
+            
+            // کد iframe برای جلسات 7 تا 11 (نمونه - باید ID ها را جایگزین کنید)
+            replaceWithIframe(7, session7Iframe);
+            replaceWithIframe(8, session8Iframe);
+            replaceWithIframe(9, session9Iframe);
+            replaceWithIframe(10, session10Iframe);
+            replaceWithIframe(11, session11Iframe);
+        }
+        
+        // مدیریت فرم ثبت‌نام
+        function setupRegistrationForm() {
+            const form = document.getElementById('registrationForm');
+            
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // جمع‌آوری داده‌های فرم
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    education: document.getElementById('education').value,
+                    experience: document.getElementById('experience').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // اعتبارسنجی اولیه
+                if (!formData.fullName || !formData.phone) {
+                    alert('لطفاً نام کامل و شماره موبایل خود را وارد کنید.');
+                    return;
+                }
+                
+                // نمایش پیام موفقیت
+                alert('با تشکر! درخواست ثبت‌نام شما با موفقیت دریافت شد.\nهمکاران ما در اسرع وقت با شما تماس خواهند گرفت.');
+                
+                // ریست فرم
+                form.reset();
+            });
         }
         
         // اجرای توابع پس از بارگذاری صفحه
         document.addEventListener('DOMContentLoaded', function() {
             createSessionBoxes();
             setupIframes();
+            setupRegistrationForm();
+            
+            // نمایش پیام درباره جلسات 7 تا 11
+            console.log("راهنمای ادمین:");
+            console.log("کدهای iframe برای جلسات 1 تا 6 در صفحه قرار داده شده است.");
+            console.log("برای جلسات 7 تا 11، ID های واقعی را جایگزین ID_GHEYMAT_X کنید.");
         });
     </script>
 </body>
