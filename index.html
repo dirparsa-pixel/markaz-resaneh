@@ -531,14 +531,24 @@
         function setupIframes() {
             // کد iframe برای جلسه اول (از قبل تنظیم شده)
             replaceWithIframe(1, session1Iframe);
-            
-
-            // replaceWithIframe(2, '
+            // در تابع setupIframes، بعد از خط جلسه اول:
+replaceWithIframe(2, '
 <iframe
     src="https://player.vidprotect.ir?id=d61f06a4-b278-4e72-bb15-545c56b4605b"
     style="height:360px;width:640px;border:none;"
     allow="fullscreen; encrypted-media *;"
 > </iframe>');
+replaceWithIframe(3, '
+<iframe
+    src="https://player.vidprotect.ir?id=895d8164-2ecd-43a6-a7dd-a7d858911921"
+    style="height:360px;width:640px;border:none;"
+    allow="fullscreen; encrypted-media *;"
+> </iframe>');
+// ...
+replaceWithIframe(15, 'کد iframe جلسه ۱۵');
+
+            // replaceWithIframe(2, '
+
             // replaceWithIframe(3, '<iframe src="آدرس ویدئوی جلسه ۳" ...></iframe>');
             // ...
             // replaceWithIframe(15, '<iframe src="آدرس ویدئوی جلسه ۱۵" ...></iframe>');
